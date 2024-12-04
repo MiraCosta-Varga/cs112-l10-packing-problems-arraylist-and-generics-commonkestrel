@@ -3,9 +3,9 @@ public class Setup {
 /*
 ****************DO NOT EDIT THIS CLASS***************
 */
-  private static Food[] food = new Food[10];
-  private static Parts[] parts = new Parts[10];
-  private static Supplies[] supplies = new Supplies[10];
+  private static Food[] food = new Food[13];
+  private static Parts[] parts = new Parts[13];
+  private static Supplies[] supplies = new Supplies[13];
 
   public Setup() {
     setUp();
@@ -22,6 +22,9 @@ public class Setup {
     food[7] = new Food("Liquid Salt", 50, false);
     food[8] = new Food("Liquid Pepper", 50, false);
     food[9] = new Food("Protein Bar", 60, false);
+    food[10] = new Food("Pears", 20, true);
+    food[11] = new Food("Hot Sauce", 5, false);
+    food[12] = new Food("Chocolate", 30, false);
     parts[0]  = new Parts("Solar Panel", 20, 10080);
     parts[1] = new Parts("Copper Wiring", 50, 10055); 
     parts[2] = new Parts("Steel Clasp", 4, 10005); 
@@ -32,6 +35,9 @@ public class Setup {
     parts[7] = new Parts("Titanium Panel", 40, 10030);
     parts[8] = new Parts("Titanium Fastener", 90, 10031);
     parts[9] = new Parts("Steel Ball Bearing", 40, 10013);
+    parts[10] = new Parts("Copper Tube", 50, 10053);
+    parts[11] = new Parts("Kevlar Strap", 30, 10040);
+    parts[12] = new Parts("Titanium Bolts", 45, 10032);
     supplies[0] = new Supplies("AG7 Pen", 25);
     supplies[1] = new Supplies("Lined Notepad", 20);
     supplies[2] = new Supplies("Sanitary Wipe", 35);
@@ -42,6 +48,9 @@ public class Setup {
     supplies[7] = new Supplies("Lithium Battery", 50);
     supplies[8] = new Supplies("Parachute", 10);
     supplies[9] = new Supplies("Laptop", 5);
+    supplies[10] = new Supplies("Sleep Mask", 10);
+    supplies[11] = new Supplies("Book", 5);
+    supplies[12] = new Supplies("Flute", 1);
   }
 
   public Food[] getFoodArray() {

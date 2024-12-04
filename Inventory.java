@@ -1,4 +1,6 @@
-public class Inventory {
+import java.util.List;
+
+public class Inventory<T extends Supplies> {
 
 	/*     STEP 3 
 	*        
@@ -8,19 +10,30 @@ public class Inventory {
 	*
 	*      Go to Transfer.java for STEP 4
 	*/
+	private String note;
 
-	/*     STEP 5
-	*
-	*      Create a method called searchByName() that takes two parameters:
-	*          - The input List<T> of generic type T
-	*          - A String "name" that we will use to search in the input List
-	*
-	*      This method should iterate through all the objects in our List
-	*      and use the getName() method of Supplies to compare against the
-	*      input String "name", use the indexOf() method to return the 
-	*      index. If no match is found, return -1. 
-	*/
+	public Inventory() {}
 
+	public String getNote() {
+		return this.note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	/** Searches for an element in the given list by name
+	 *
+	 * @return The index of the found element, or {@code -1} if the element does not exist.
+	**/
+	public int searchByName(List<T> inputList, String name) {
+		for (int i = 0; i < inputList.size(); i++) {
+			if (inputList.get(i).getName().equalsIgnoreCase(name))
+				return i;
+		}
+
+		return -1;
+	}
 
 	/*     STEP 7:
 	* 
@@ -43,5 +56,18 @@ public class Inventory {
 	*      match the quantity in the list, then update using .setQuantity
 	*      and return the object with the new quantity.
 	*/
+	public T checkQty(List<T> input, String name, int desiredQuantity) {
+		int index = this.searchByName(input, name);
+		if (index == -1)
+			return null;
 
+		T item = input.get(index);
+		if (item.getQuantity() == desiredQuantity) {
+			System.out.println("The quantity already matches!");
+		} else {
+			item.setQuantity(desiredQuantity);
+		}
+
+		return item;
+	}
 }
